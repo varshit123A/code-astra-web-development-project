@@ -1,0 +1,25 @@
+{
+  "firestore": {
+    "rules": "config/firestore.rules"
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": [
+    {
+      "bucket": "codeastra2026-web.firebasestorage.app",
+      "rules": "config/storage.rules"
+    }
+  ]
+}

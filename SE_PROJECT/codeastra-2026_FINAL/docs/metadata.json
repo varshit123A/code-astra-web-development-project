@@ -1,0 +1,5 @@
+{
+  "name": "CodeAstra 2026",
+  "description": "An online platform to host the CodeAstra 2026 national-level coding competition. It provides features for team registration, multi-round online tests, and an admin dashboard for managing the event.",
+  "requestFramePermissions": []
+}

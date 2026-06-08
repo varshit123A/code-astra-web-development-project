@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Teams collection - allow read/create without auth for development, require auth for updates
+    match /teams/{teamId} {
+      allow create, read: if true; // Allow anyone to register and view teams (for development)
+      allow update, delete: if request.auth != null; // Require auth for modifications
+    }
+
+    // Admin state - allow anyone to read, only admin to write
+    match /adminState/{document} {
+       allow read: if true;
+       allow write: if request.auth != null && request.auth.token.email == 'admin@codeastra.com';
+    }
+  }
+}
